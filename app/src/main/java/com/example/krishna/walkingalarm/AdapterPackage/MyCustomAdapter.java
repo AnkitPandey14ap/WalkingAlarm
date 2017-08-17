@@ -1,6 +1,7 @@
-package com.example.krishna.walkingalarm;
+package com.example.krishna.walkingalarm.AdapterPackage;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.krishna.walkingalarm.R;
 
 import java.util.ArrayList;
 
@@ -15,7 +19,7 @@ import java.util.ArrayList;
  * Created by krishna pandey on 22-07-2017.
  */
 
-class MyCustomAdapter extends BaseAdapter implements ListAdapter {
+public class MyCustomAdapter extends BaseAdapter implements ListAdapter {
 
     private final Context context;
     private final ArrayList<String> alarmList;
@@ -44,7 +48,7 @@ class MyCustomAdapter extends BaseAdapter implements ListAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
         View view=convertView;
         if(view==null){
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -52,10 +56,17 @@ class MyCustomAdapter extends BaseAdapter implements ListAdapter {
         }
         TextView textView = (TextView) view.findViewById(R.id.timeTextView);
         TextView timeLeftTextView = (TextView) view.findViewById(R.id.timeLeftTextView);
-        ImageView imageView = (ImageView) view.findViewById(R.id.circleImageView);
+        final ImageView imageView = (ImageView) view.findViewById(R.id.circleImageView);
 
         textView.setText(alarmList.get(position));
 
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.setImageDrawable(context.getResources().getDrawable(R.drawable.checked_circle));
+                Toast.makeText(context, "clicked "+position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //imageView.setImageResource(Integer.parseInt(iconList.get(position)));
 
