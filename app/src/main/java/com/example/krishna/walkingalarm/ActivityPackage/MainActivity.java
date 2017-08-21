@@ -1,20 +1,16 @@
 package com.example.krishna.walkingalarm.ActivityPackage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView circleImageView;
 
     private static ArrayList<String> alarmList = new ArrayList<>();
+    private int request =1;
 
 
     @Override
@@ -67,20 +64,22 @@ getSupportActionBar().setTitle("hello");
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 alarmList.add("03:35 am");
                 saveArray(MainActivity.this);
-                myCustomAdapter.notifyDataSetChanged();
+                myCustomAdapter.notifyDataSetChanged();*/
+
+                Intent intent = new Intent(MainActivity.this, AlarmDetails.class);
+                startActivityForResult(intent, request);
+
 
             }
         });
 
-/*
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor mEdit1 = sp.edit();
         mEdit1.clear().commit();
-*/
 
 
 
@@ -94,22 +93,6 @@ getSupportActionBar().setTitle("hello");
 
         listView.setAdapter(myCustomAdapter);
         registerForContextMenu(listView);
-
-        TextView textView = (TextView) findViewById(R.id.timeTextView);
-        TextView timeLeftTextView = (TextView) findViewById(R.id.timeLeftTextView);
-        final ImageView imageView = (ImageView) findViewById(R.id.circleImageView);
-
-/*
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "Clicked "+i, Toast.LENGTH_SHORT).show();
-
-//                imageView.setImageDrawable(getResources().getDrawable(R.drawable.checked_circle));
-
-            }
-        });*/
-
 
 
 
