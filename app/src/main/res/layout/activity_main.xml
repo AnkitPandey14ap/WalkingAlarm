@@ -28,7 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginBottom="64dp"
         app:backgroundTint="@color/textColor"
         android:background="#ffffff"
         app:fabSize="auto"
@@ -36,5 +37,31 @@
         android:elevation="16dp"
         android:tint="#000000"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorBlack"/>
+
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
