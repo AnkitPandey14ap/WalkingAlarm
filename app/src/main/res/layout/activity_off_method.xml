@@ -26,6 +26,15 @@
             android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <ImageView
+            android:id="@+id/dImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blank_circle"/>
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,6 +55,15 @@
             android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <ImageView
+            android:id="@+id/wImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blank_circle"/>
+
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -66,6 +84,15 @@
             android:textColor="@color/colorWhite"
             android:layout_centerInParent="true"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <ImageView
+            android:id="@+id/sImageView"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/blank_circle"/>
+
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         /*
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
-getSupportActionBar().setTitle("hello");
+        getSupportActionBar().setTitle("Alarm");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +132,10 @@ getSupportActionBar().setTitle("hello");
             alarmList.add(mSharedPreference1.getString("Status_" + i, null));
         }
 
+        alarmList.add("03:10 AM");
+        alarmList.add("03:10 AM");
+        alarmList.add("03:10 AM");
+        alarmList.add("03:10 AM");
     }
 
 
